@@ -59,8 +59,6 @@ abstract class BaseReplace {
                     newResName = config.new_prefix + oldResName.substring(config.old_prefix.length())
                 }
                 matcher.appendReplacement(sb, "\$1$newResName") // 拼接 保留$1分组,替换$6分组
-            } else {
-                matcher.find()              // 继续下一次查找，避免死循环
             }
         }
         // 修改了文件时，才写入文件
@@ -101,8 +99,6 @@ abstract class BaseReplace {
                     } else {
                         matcher.appendReplacement(tSb, "\$1$newResName") // 拼接 保留$1分组,替换组2
                     }
-                } else {
-                    matcher.find()                          // 继续下一次查找，避免死循环
                 }
             }
             if (tSb.length() > 0) {                         // 如果包含了，则重新赋值line，并拼接余下部分
