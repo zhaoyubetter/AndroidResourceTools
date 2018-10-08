@@ -3,4 +3,11 @@
     <color name="better_colorPrimary">#008577</color>
     <color name="better_colorPrimaryDark">#00574B</color>
     <color name="better_colorAccent">#D81B60</color>
+
+    <color name="edit_cursor">#F48260</color>
+    <color name="set_bind">#3ABE00</color>
+    <color name="blue_light">#00EEEE</color>
+    <color name="blue">#0000ff</color>
+    <color name="yellow_push_msg_dot">#ff9c00</color>
+    <color name="tab_text_color_boy">#169ce6</color>
 </resources>

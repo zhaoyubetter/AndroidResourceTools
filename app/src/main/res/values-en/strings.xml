@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="better_app_name">ResourceTools</string>
+
+
+    <string name="java">Java</string>
+    <string name="kotlin">Kotlin</string>
+    <string name="javascript">Javascript</string>
+    <string name="python">Python</string>
+    <string name="groovy">Groovy</string>
+    <string name="android">Android</string>
+    <string name="iOS">iOS</string>
+</resources>

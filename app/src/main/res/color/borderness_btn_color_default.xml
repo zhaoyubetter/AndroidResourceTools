@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:color="@color/tab_text_color_boy" android:state_pressed="true" />
+    <item android:color="@color/yellow_push_msg_dot" android:state_enabled="false" />
+    <item android:color="@color/better_colorAccent" />
+
+</selector>

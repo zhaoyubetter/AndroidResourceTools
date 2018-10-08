@@ -17,6 +17,8 @@ sourceSets {
     main.java.srcDirs += 'src/main/groovy'
 }
 
+// ====== to jcenter
+// gradle clean build generatePomFileForMavenPublication bintrayUpload -PbintrayUser=zhaoyubetter -PbintrayKey= -PdryRun=false
 
 publish {
     userOrg = 'zhaoyubetter'//bintray.com用户名
@@ -26,4 +28,5 @@ publish {
     desc = 'Android resource: change resouces name.'//描述
     website = 'https://github.com/zhaoyubetter/AndroidResourceTools'
 }
+
 
