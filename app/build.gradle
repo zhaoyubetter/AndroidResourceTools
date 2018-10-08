@@ -27,9 +27,12 @@ android {
 
 // config
 resConfig {
-    new_prefix = 'better_'
-    old_prefix = ''
-
+    new_prefix = 'better_'  // 资源前缀
+    old_prefix = ''         // 老前缀，可为''空字符串
+    // === below use default
+    // resFolderPath 资源目录
+    // srcFolderPath 源代码目录
+    // manifestFilePath 清单文件目录
 }
 
 dependencies {
