@@ -1,0 +1,29 @@
+apply plugin: 'java-library'
+apply plugin: 'groovy'
+apply plugin: 'com.novoda.bintray-release'
+
+
+def group = "com.github.better.restools"        //project属性
+def VERSION = "1.0.0"                          //project属性
+
+dependencies {
+    implementation gradleApi()//gradle sdk
+    implementation localGroovy()//groovy sdk
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/java'
+    main.java.srcDirs += 'src/main/groovy'
+}
+
+
+publish {
+    userOrg = 'zhaoyubetter'//bintray.com用户名
+    groupId = group //jcenter上的路径
+    artifactId = 'ResTools'//项目名称
+    publishVersion = VERSION //版本号
+    desc = 'Android resource: change resouces name.'//描述
+    website = 'https://github.com/zhaoyubetter/AndroidResourceTools'
+}
+
