@@ -15,7 +15,7 @@ public class LayoutReplace extends BaseFolderResReplace {
     private def final DIR_FILTER = new Tools.DirNamePrefixFilter("layout")
     private def final RES_TYPE_NAME = "layout"
 
-    LayoutReplace(ResToolsConfig config) {
+    LayoutReplace(ResToolsConfiguration config) {
         super(config)
     }
 
