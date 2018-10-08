@@ -4,7 +4,7 @@ apply plugin: 'com.novoda.bintray-release'
 
 
 def group = "com.github.better.restools"        //project属性
-def VERSION = "1.0.0"                          //project属性
+def VERSION = "1.0.1"                          //project属性
 
 dependencies {
     implementation gradleApi()//gradle sdk
