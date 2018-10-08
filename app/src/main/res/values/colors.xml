@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="better_colorPrimary">#008577</color>
-    <color name="better_colorPrimaryDark">#00574B</color>
-    <color name="better_colorAccent">#D81B60</color>
+    <color name="better_better_colorPrimary">#008577</color>
+    <color name="better_better_colorPrimaryDark">#00574B</color>
+    <color name="better_better_colorAccent">#D81B60</color>
 
-    <color name="edit_cursor">#F48260</color>
-    <color name="set_bind">#3ABE00</color>
-    <color name="blue_light">#00EEEE</color>
-    <color name="blue">#0000ff</color>
-    <color name="yellow_push_msg_dot">#ff9c00</color>
-    <color name="tab_text_color_boy">#169ce6</color>
+    <color name="better_edit_cursor">#F48260</color>
+    <color name="better_set_bind">#3ABE00</color>
+    <color name="better_blue_light">#00EEEE</color>
+    <color name="better_blue">#0000ff</color>
+    <color name="better_yellow_push_msg_dot">#ff9c00</color>
+    <color name="better_tab_text_color_boy">#169ce6</color>
 </resources>

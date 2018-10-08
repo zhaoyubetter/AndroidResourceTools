@@ -1,13 +1,13 @@
 <resources>
-    <string name="better_app_name">ResourceTools</string>
+    <string name="better_better_app_name">ResourceTools</string>
 
 
-    <string name="java">Java 语言</string>
-    <string name="kotlin">Kotlin 语言</string>
-    <string name="javascript">Javascript 语言</string>
-    <string name="python">Python 语言</string>
-    <string name="groovy">Groovy 语言</string>
-    <string name="android">Android 语言</string>
-    <string name="iOS">iOS 语言</string>
+    <string name="better_java">Java 语言</string>
+    <string name="better_kotlin">Kotlin 语言</string>
+    <string name="better_javascript">Javascript 语言</string>
+    <string name="better_python">Python 语言</string>
+    <string name="better_groovy">Groovy 语言</string>
+    <string name="better_android">Android 语言</string>
+    <string name="better_iOS">iOS 语言</string>
 
 </resources>
