@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/btn_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/better_better_colorPrimaryDark"
+        android:padding="4dp"
+        android:text="最喜欢的编程语言"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/better_size_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/better_java"
+        android:textColor="@color/better_edit_cursor"
+        android:textSize="@dimen/better_size_middle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/better_kotlin"
+        android:textColor="@color/better_set_bind"
+        android:textSize="@dimen/better_size_middle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/better_javascript"
+        android:textColor="@color/better_blue_light"
+        android:textSize="@dimen/better_size_middle" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/better_python"
+        android:textColor="@color/better_blue"
+        android:textSize="@dimen/better_size_middle" />
+
+</LinearLayout>

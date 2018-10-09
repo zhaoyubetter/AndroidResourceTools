@@ -55,7 +55,7 @@ resConfig {
 
 | 资源类型 | 源代码中 | xml引用中 |备注|
 | :--- | ------ | :---- |:--|
-| layout | R.layout.XXX | @layout/XXX |布局文件|
+| layout | R.layout.XXX<br />import kotlinx.android.synthetic.main.xxx.* | @layout/XXX |布局文件<br />kotlin导入布局时，重名支持|
 | drawable | R.drawable.XXX | @drawable/XXX ||
 | anim | R.anim.XXX | @anim/XXX ||
 | color | R.color.XXX | @color/XXX ||
