@@ -4,7 +4,12 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.better_better_activity_main.*
 
+/**
+ * 测试中文问题
+ */
 class MainActivity : AppCompatActivity() {
+
+    val 中 = "测试中文变量"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
