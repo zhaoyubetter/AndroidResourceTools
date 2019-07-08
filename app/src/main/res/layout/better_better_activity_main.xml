@@ -51,4 +51,6 @@
         android:textColor="@color/better_blue"
         android:textSize="@dimen/better_size_middle" />
 
+    <include layout="@layout/better_better_b"/>
+
 </LinearLayout>
