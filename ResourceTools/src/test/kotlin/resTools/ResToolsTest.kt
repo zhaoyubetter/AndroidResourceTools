@@ -59,4 +59,20 @@ class ResToolsTest {
         doWork(config)
     }
 
+    /**
+     * 中文测试
+     */
+    @Test
+    fun testLayout() {
+        val config = ResToolsConfig(
+                srcFolderPath = "/Users/zhaoyu1/Documents/github/AndroidResourceTools/app/src/main/java",
+                resFolderPath = "/Users/zhaoyu1/Documents/github/AndroidResourceTools/app/src/main/res",
+                manifestFilePath = "/Users/zhaoyu1/Documents/github/AndroidResourceTools/app/src/main/AndroidManifest.xml",
+                oldPrefix = "better",
+                newPrefix = "bb_")
+        // 1. layout
+        val layoutReplace = LayoutReplace(config)
+        layoutReplace.replaceThis()
+    }
+
 }
