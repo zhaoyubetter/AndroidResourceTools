@@ -51,7 +51,7 @@ class ResToolsTest {
                 resFolderPath = "/Users/zhaoyu1/Documents/github/AndroidResourceTools/app/src/main/res",
                 manifestFilePath = "/Users/zhaoyu1/Documents/github/AndroidResourceTools/app/src/main/AndroidManifest.xml",
                 oldPrefix = "better",
-                newPrefix = "b_")
+                newPrefix = "bb_")
 
         doWork(config)
     }
