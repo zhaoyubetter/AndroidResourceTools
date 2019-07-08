@@ -22,13 +22,18 @@ class DrawableReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
     override val xmlRegex: String = """(@drawable/)(\w+)"""
 
     override fun getResNameSet(): Set<String> {
-        return resDir.listFiles(DIR_FILTER)?.map {
-            var suffixName = it.name.substringBeforeLast(".")
-            if (suffixName.endsWith(".9")) {
-                suffixName = suffixName.substringBeforeLast(".")
+        val drawableNameSet =  HashSet<String>()
+        resDir.listFiles(DIR_FILTER)?.forEach {dir->
+            dir.listFiles().forEach { file->
+                var suffixName = file.name.substringBeforeLast(".")
+                if (suffixName.endsWith(".9")) {
+                    suffixName = suffixName.substringBeforeLast(".")
+                }
+                drawableNameSet.add(suffixName)
             }
-            suffixName
-        }?.toSet() ?: Collections.emptySet()
+        }
+
+        return drawableNameSet
     }
 
     override fun replaceSrc(resNameSet: Set<String>, regex: String) {

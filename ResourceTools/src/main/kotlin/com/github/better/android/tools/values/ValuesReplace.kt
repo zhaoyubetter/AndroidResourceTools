@@ -64,7 +64,7 @@ class ValuesReplace(config: ResToolsConfig) : BaseReplace(config) {
         // 修改xml中的名称
         replaceResDir(resDir, stringNameSet, valueType.xml_Regx, null, true)
         // 修改xml中的引用
-        replaceResDir(resDir, stringNameSet, valueType.xml_ref_regex, null)
+//        replaceResDir(resDir, stringNameSet, valueType.xml_ref_regex, null)
     }
 
     // string-array

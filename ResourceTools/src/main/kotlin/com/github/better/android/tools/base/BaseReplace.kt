@@ -1,6 +1,7 @@
 package com.github.better.android.tools.base
 
 import com.github.better.android.tools.ResToolsConfig
+import com.github.better.android.tools.getNewName
 import java.io.File
 import java.io.FileFilter
 import java.io.FilenameFilter
@@ -61,11 +62,7 @@ abstract class BaseReplace(config: ResToolsConfig) {
         while (matcher.find()) {
             val oldName = matcher.group(6)   // oldName
             if (set.contains(oldName)) {      // 本模块包含的资源名才替换
-                val newName = config.newPrefix + if (oldName.startsWith(config.oldPrefix)) {
-                    oldName.substring(config.oldPrefix.length)
-                } else {
-                    oldName
-                }
+                val newName = config.getNewName(oldName)
                 matcher.appendReplacement(sb, "\$1$newName")  // 拼接： 保留$!分组，替换$6分组
             }
         }
@@ -89,16 +86,13 @@ abstract class BaseReplace(config: ResToolsConfig) {
         var hasUpdate = false
         val sb = StringBuilder()
         file.forEachLine { line ->
+            var line = line
             val matcher = Regex(regex).toPattern().matcher(line)
             val tSb = StringBuffer()
             while (matcher.find()) {
                 val oldName = matcher.group(2)
                 if (set.contains(oldName)) {
-                    val newName = config.newPrefix + if (oldName.startsWith(config.oldPrefix)) {
-                        oldName.substring(config.oldPrefix.length)
-                    } else {
-                        oldName
-                    }
+                    val newName = config.getNewName(oldName)
 
                     if (isValuesDir) {
                         matcher.appendReplacement(tSb, "\$1$newName\$3") // 拼接 保留$1分组,替换组2,保留组3
@@ -111,6 +105,7 @@ abstract class BaseReplace(config: ResToolsConfig) {
             if (tSb.isNotEmpty()) {
                 matcher.appendTail(tSb)
                 hasUpdate = true
+                line = tSb.toString()
             }
 
             sb.append(line).append(System.lineSeparator())

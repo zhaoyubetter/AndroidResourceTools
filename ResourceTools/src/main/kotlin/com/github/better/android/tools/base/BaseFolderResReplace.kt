@@ -2,6 +2,7 @@ package com.github.better.android.tools.base
 
 import com.github.better.android.tools.ResToolsConfig
 import com.github.better.android.tools.debug
+import com.github.better.android.tools.getNewName
 import com.github.better.android.tools.warn
 import java.io.File
 import java.io.FileFilter
@@ -93,11 +94,7 @@ abstract class BaseFolderResReplace(config: ResToolsConfig) : BaseReplace(config
                 // 只替换指定的资源
                 if (resNameSet.contains(fileName)) {
                     val oldName = file.name
-                    val newName = config.newPrefix + if (oldName.startsWith(config.oldPrefix)) {
-                        oldName.substring(config.oldPrefix.length)
-                    } else {
-                        oldName
-                    }
+                    val newName =config.getNewName(oldName)
 
                     // 重命名文件
                     File(file.parent, newName).apply {

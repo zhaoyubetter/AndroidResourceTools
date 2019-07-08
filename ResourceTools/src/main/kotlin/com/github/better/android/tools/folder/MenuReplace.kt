@@ -24,8 +24,14 @@ class MenuReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
     override val xmlRegex: String = """(@menu/)(\w+)"""
 
     override fun getResNameSet(): Set<String> {
-        return resDir.listFiles(DIR_FILTER)?.map { it.name.substringBeforeLast(".") }?.toSet()
-                ?: Collections.emptySet()
+        val layoutNameSet = HashSet<String>()
+        // 1.获取所有layout开头的文件夹，并获取下面的所有的文件
+        resDir.listFiles(DIR_FILTER)?.forEach { dir ->
+            dir.listFiles().forEach { file ->
+                layoutNameSet.add(file.name.substring(0, file.name.lastIndexOf(".")))
+            }
+        }
+        return layoutNameSet
     }
 
     override fun replaceSrc(resNameSet: Set<String>, regex: String) {

@@ -3,9 +3,11 @@ package com.github.better.android.tools.folder
 import com.github.better.android.tools.ResToolsConfig
 import com.github.better.android.tools.base.BaseFolderResReplace
 import com.github.better.android.tools.debug
+import com.github.better.android.tools.getNewName
 import java.io.File
 import java.io.FilenameFilter
 import java.util.*
+import kotlin.collections.HashSet
 
 /**
  * Layout
@@ -24,8 +26,14 @@ class LayoutReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
     override val xmlRegex: String = """(@layout/)(\w+)"""
 
     override fun getResNameSet(): Set<String> {
-        return resDir.listFiles(DIR_FILTER)?.map { it.name.substringBeforeLast(".") }?.toSet()
-                ?: Collections.emptySet()
+        val layoutNameSet = HashSet<String>()
+        // 1.获取所有layout开头的文件夹，并获取下面的所有的文件
+        resDir.listFiles(DIR_FILTER)?.forEach { dir ->
+            dir.listFiles().forEach { file ->
+                layoutNameSet.add(file.name.substring(0, file.name.lastIndexOf(".")))
+            }
+        }
+        return layoutNameSet
     }
 
     override fun replaceSrc(resNameSet: Set<String>, regex: String) {
@@ -47,6 +55,7 @@ class LayoutReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
         debug("---------- $RES_TYPE_NAME ----- rename start...")
         renameFile(resDir, resNameSet, DIR_FILTER, RES_TYPE_NAME)
         debug("---------- $RES_TYPE_NAME ----- rename end")
+
     }
 
     /**
@@ -79,11 +88,7 @@ class LayoutReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
         while (matcher.find()) {
             val oldName = matcher.group(2)
             if (set.contains(oldName)) {
-                val newName = config.newPrefix + if (oldName.startsWith(config.oldPrefix)) {
-                    oldName.substring(config.oldPrefix.length)
-                } else {
-                    oldName
-                }
+                val newName = config.getNewName(oldName)
                 matcher.appendReplacement(sb, "\$1$newName\$3") // 拼接 保留$1$3分组,替换$2分组
             }
         }

@@ -32,8 +32,14 @@ class RawReplace(config: ResToolsConfig) : BaseFolderResReplace(config) {
      * 如：[res/anim/better.xml,res/anim/cz.xml] 返回 [better, cz]
      */
     override fun getResNameSet(): Set<String> {
-        return resDir.listFiles(DIR_FILTER)?.map { it.name.substringBeforeLast(".") }?.toSet()
-                ?: Collections.emptySet()
+        val layoutNameSet = HashSet<String>()
+        // 1.获取所有layout开头的文件夹，并获取下面的所有的文件
+        resDir.listFiles(DIR_FILTER)?.forEach { dir ->
+            dir.listFiles().forEach { file ->
+                layoutNameSet.add(file.name.substring(0, file.name.lastIndexOf(".")))
+            }
+        }
+        return layoutNameSet
     }
 
     override fun replaceSrc(resNameSet: Set<String>, regex: String) {
