@@ -44,6 +44,9 @@ class ResToolsTest {
         valuesReplace.replaceValues(ValuesReplace.ALL_VALUES_TYPES)
     }
 
+    /**
+     * 这里是测试类
+     */
     @Test
     fun test() {
         val config = ResToolsConfig(
